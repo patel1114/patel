@@ -1,0 +1,293 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Admin container */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: clamp(200px, 25vw, 250px);
+    background: #333;
+    color: white;
+    padding: clamp(15px, 2vw, 20px);
+    min-height: 100vh;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: clamp(15px, 2vw, 20px);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: clamp(10px, 2vw, 20px) 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: clamp(8px, 1.5vw, 10px);
+    display: block;
+    transition: 0.3s;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover {
+    background: #575757;
+}
+
+/* Main content */
+.content {
+    flex: 1;
+    padding: clamp(15px, 2vw, 20px);
+    background: white;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+/* Stats box */
+.stats {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px);
+    flex-wrap: wrap;
+}
+
+.stats-box {
+    background: #007bff;
+    color: white;
+    padding: clamp(15px, 2vw, 20px);
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.stats-box h3 {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.stats-box p {
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Table styles */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    min-width: 600px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: clamp(8px, 1.5vw, 10px);
+    text-align: left;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+
+th {
+    background: #007bff;
+    color: white;
+    white-space: nowrap;
+}
+
+/* Ticket details page */
+form {
+    margin-top: clamp(15px, 2vw, 20px);
+    max-width: 800px;
+}
+
+form label {
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    display: block;
+    margin-bottom: 5px;
+}
+
+form select, form input, form textarea {
+    width: 100%;
+    padding: clamp(8px, 1.5vw, 10px);
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    box-sizing: border-box;
+}
+
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: clamp(8px, 1.5vw, 10px);
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    min-height: 44px;
+    min-width: 100px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Login page */
+.login-container {
+    width: min(300px, 90%);
+    margin: clamp(50px, 10vh, 100px) auto;
+    padding: clamp(15px, 3vw, 20px);
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.login-container h2 {
+    margin-bottom: clamp(15px, 2vw, 20px);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.login-container input {
+    width: 100%;
+    padding: clamp(8px, 1.5vw, 10px);
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    box-sizing: border-box;
+}
+
+.login-container button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Error messages */
+.error {
+    color: red;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    margin: 10px 0;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 1024px) {
+    .stats-box {
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        position: relative;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .stats-box {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .stats {
+        gap: 10px;
+    }
+
+    .login-container {
+        margin: 20px auto;
+    }
+}
+
+/* Add smooth scrolling for better mobile experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets for mobile */
+button, 
+input[type="submit"],
+input[type="button"],
+a {
+    touch-action: manipulation;
+}
+
+/* Add mobile menu toggle button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+}

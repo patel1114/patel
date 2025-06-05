@@ -1,0 +1,208 @@
+/* Styles for the container */
+.container {
+    background: white;
+    padding: clamp(15px, 3vw, 20px);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #ccc;
+    max-width: min(800px, 95%);
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* Header container with heading and close button */
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(15px, 3vw, 20px);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    height: clamp(40px, 8vw, 50px);
+    width: auto;
+    margin-right: clamp(10px, 2vw, 15px);
+}
+
+.header-container h2 {
+    background-color: #097c65;
+    color: #000605;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    padding: 10px;
+    margin: 0;
+}
+
+/* Close button styles */
+.close-btn {
+    position: relative;
+    background: rgb(242, 172, 172);
+    border: darkred;
+    font-size: clamp(24px, 4vw, 30px);
+    color: #fb0a0a;
+    cursor: pointer;
+    padding: clamp(5px, 1vw, 10px);
+    margin: clamp(5px, 1vw, 10px);
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form row styles */
+.form-row {
+    display: flex;
+    gap: clamp(10px, 2vw, 15px);
+    margin-bottom: clamp(10px, 2vw, 15px);
+    flex-wrap: wrap;
+}
+
+/* Form group styles */
+.form-group {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+label span {
+    color: red;
+}
+
+input, select, textarea {
+    padding: clamp(6px, 1.5vw, 8px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: clamp(14px, 2vw, 16px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: clamp(80px, 15vw, 100px);
+    resize: vertical;
+}
+
+/* Attachment & CAPTCHA section styles */
+.attachment-captcha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.attachment a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.file-types {
+    font-size: clamp(10px, 1.5vw, 12px);
+    color: gray;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Submit & Cancel Buttons */
+.buttons {
+    text-align: right;
+    margin-top: clamp(15px, 3vw, 20px);
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.submit-btn, .cancel-btn {
+    padding: clamp(8px, 2vw, 15px) clamp(12px, 3vw, 20px);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: clamp(14px, 2vw, 16px);
+    min-height: 44px;
+    min-width: 100px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+    background-color: green;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: red;
+    color: white;
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        min-width: 100%;
+    }
+
+    .attachment-captcha {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .submit-btn, .cancel-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .close-btn {
+        position: static;
+        margin: 10px auto;
+    }
+}
+
+/* Add smooth scrolling for better mobile experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets for mobile */
+button, 
+input[type="submit"],
+input[type="button"],
+a {
+    touch-action: manipulation;
+}
